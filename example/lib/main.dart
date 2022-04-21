@@ -33,7 +33,8 @@ class _MyAppState extends State<MyApp> {
     // We also handle the message potentially returning null.
     try {
       platformVersion =
-          await MantraMfs100.platformVersion ?? 'Unknown platform version';
+          //   await MantraMfs100.platformVersion ?? 'Unknown platform version';
+          ((await MantraMfs100.sdkVersion) ?? -1).toString();
     } on PlatformException {
       platformVersion = 'Failed to get platform version.';
     }

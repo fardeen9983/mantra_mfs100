@@ -9,4 +9,9 @@ class MantraMfs100 {
     final String? version = await _channel.invokeMethod('getPlatformVersion');
     return version;
   }
+
+  static Future<int?> get sdkVersion async {
+    final int? version = await _channel.invokeMethod('getSdkVersion');
+    return version;
+  }
 }

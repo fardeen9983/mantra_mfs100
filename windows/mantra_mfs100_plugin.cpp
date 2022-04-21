@@ -1,4 +1,5 @@
 #include "include/mantra_mfs100/mantra_mfs100_plugin.h"
+#include "include/mantra_mfs100/MFS100Dll.h"
 
 // This must be included before many other Windows headers.
 #include <windows.h>
@@ -68,15 +69,17 @@ std::string MantraMfs100Plugin::GetPlatformVersion() {
     return version_stream.str();
 }
 
-
+std::int64_t MantraMfs100Plugin::GetSdkVersion() {
+    return MFS100GetSDKVersion();
+}
 void MantraMfs100Plugin::HandleMethodCall(
     const flutter::MethodCall<flutter::EncodableValue> &method_call,
     std::unique_ptr<flutter::MethodResult<flutter::EncodableValue>> result) {
   if (method_call.method_name().compare("getPlatformVersion") == 0) {
    
     result->Success(flutter::EncodableValue(GetPlatformVersion()));
-  } else if(method_call.method_name().compare("initDevice") == 0) {
-    
+  } else if(method_call.method_name().compare("getSdkVersion") == 0) {
+    result->Success(flutter::EncodableValue(GetSdkVersion()));
   } else {
   result->NotImplemented();
   }
