@@ -28,6 +28,7 @@ class MantraMfs100Plugin : public flutter::Plugin {
   
  private:
   std::string GetPlatformVersion();
+  std::int64_t GetSdkVersion();
   // Called when a method is called on this plugin's channel from Dart.
   void HandleMethodCall(
       const flutter::MethodCall<flutter::EncodableValue> &method_call,

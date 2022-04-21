@@ -3,7 +3,6 @@ import 'dart:async';
 
 import 'package:flutter/services.dart';
 import 'package:mantra_mfs100/mantra_mfs100.dart';
-import 'package:mantra_mfs100_example/ffi_bridge.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,7 +21,7 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    FFIBridge.initialize();
+    //FFIBridge.initialize();
     initPlatformState();
   }
 
