@@ -283,7 +283,7 @@ namespace
         int Quality = 0;
         int NFIQ = 0;
         int Threshold = 254;
-        while (Quality >= 0 && Quality < 60)
+        while (Quality >= 0 && Quality < 50)
         {
           ret = MFS100GetFrame(FinalFrame500DPI);
           if (ret != 0)
